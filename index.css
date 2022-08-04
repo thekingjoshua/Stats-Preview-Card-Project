@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+/********************* Variables styling for this style sheet **********************/
+:root {
+  --mainbg: hsl(233, 47%, 7%);
+  --cardbg: hsl(244, 38%, 16%);
+  --accent: hsl(277, 87%, 37%);
+  --mainheadings: hsl(0, 0%, 100%);
+  --mainparagraph: hsla(0, 0%, 100%, 0.75);
+  --statheading: hsla(0, 0%, 100%, 0.274);
+}
+
+body {
+  background-color: var(--mainbg);
+}
+div.main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/********************* Card body **********************/
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+/********************* Top / Right Item Container  **********************/
+.top {
+  width: 280px;
+  height: 200px;
+  background-color: var(--accent);
+  border-radius: 7px 7px 0 0;
+}
+
+/********************* Top / Right Image  **********************/
+.top>img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  opacity: 0.5;
+  border-radius: 7px 7px 0 0;
+}
+
+/********************* Bottom / Left Container **********************/
+.bottom {
+  background-color: var(--cardbg);
+  width: 280px;
+  height: 400px;
+  border-radius: 0 0 7px 7px;
+}
+
+/********************* Main Heading **********************/
+div.main-heading {
+  color: var(--mainheadings);
+  font-size: 19px;
+  font-family: arial;
+  margin: 20px 40px 10px 40px;
+  text-align: center;
+  font-weight: 800;
+  line-height: 25px;
+}
+
+/*******Purple text ('insights')*******/
+span {
+  color: var(--accent);
+  font-size: arial;
+}
+
+/********************* Main Paragraph **********************/
+div.main-paragraph {
+  color: var(--mainparagraph);
+  font-family: arial;
+  margin: 10px 40px 10px 40px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+/********************* Stats Container **********************/
+div.stats-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/********************* Stats Items **********************/
+div.stats-container > div > div.stats-items {
+  align-items: center;
+  color: var(--mainparagraph);
+  gap: 5px;
+  font-family: Arial;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+/********************* Stats Heading **********************/
+div.stats-items>span.stats-heading {
+  color: var(--statheading);
+  margin-bottom: 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+footer{
+  text-align: center;
+}
+/****** Mobile View ******/
+@media only screen and (max-width: 320px) {
+  .container {
+    margin-top: 0;
+  }
+}
+
+/******* Laptop View ******/
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    flex-direction: row-reverse;
+  }
+
+  .top {
+    width: 450px;
+    height: 350px;
+    border-radius: 0px 7px 7px 0;
+  }
+
+  .top>img {
+    width: 450px;
+    height: 350px;
+    border-radius: 0px 7px 7px 0;
+  }
+
+  .bottom {
+    width: 450px;
+    height: 350px;
+    border-radius: 7px 0 0 7px;
+    padding: 40px 20px 40px 20px;
+  }
+
+  div.main-heading {
+    font-size: 25px;
+    line-height: 35px;
+    text-align: left;
+    margin: 10px 40px 30px 40px;
+  }
+
+  div.main-paragraph {
+    margin: 10px 40px 30px 40px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  div.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  div.flex-items {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    font-size: 20px;
+    margin: 0px 0px 0px 40px;
+  }
+
+  div.flex-items>span.stats-heading {
+    color: var(--statheading);
+    margin-bottom: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  div.stats-container > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /********************* Stats Items **********************/
+  div.stats-items {
+    font-family: Arial;
+    padding: 10px 20px 0 20px;
+  }
+
+  /********************* Stats Heading **********************/
+  div.stats-items>span.stats-heading {
+    color: var(--statheading);
+    margin-bottom: 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+}
